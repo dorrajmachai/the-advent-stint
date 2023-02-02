@@ -11,6 +11,10 @@ import java.lang.StringBuilder;
 // - [x] Omit characters that aren't letters
 // - [ ] Omit Greek lowercase letters
 
+/*
+
+I think the problem is that I am setting the value of these characters to something when I should be deleting them completely. So, I have to figure out what I'm doing wrong with the .delete() and .deleteCharAt() methods in order to get the tests to pass....
+*/
 public class SqueakyClean {
     static String clean(String identifier) {
         // the capacity of a StringBuilder instance can be initialized to the value of a string it's passed.
@@ -32,7 +36,7 @@ public class SqueakyClean {
                                         Character.toUpperCase(stringBuilder.charAt(i + 1)));           
                 stringBuilder.setCharAt(i, Character.MIN_VALUE);
 
-            // Omit characters that aren't letters
+            // Omit characters that aren't letters - DONE
             } else if (!Character.isLetter(stringBuilder.charAt(i))) {
                 stringBuilder.setCharAt(i, Character.MIN_VALUE);
         
