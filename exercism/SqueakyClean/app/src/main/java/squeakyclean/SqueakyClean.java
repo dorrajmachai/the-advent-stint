@@ -17,10 +17,14 @@ I think the problem is that I am setting the value of these characters to someth
 */
 public class SqueakyClean {
     static String clean(String identifier) {
-        // the capacity of a StringBuilder instance can be initialized to the value of a string it's passed.
-        StringBuilder stringBuilder = new StringBuilder(identifier);
+        return identifier;
+    }
 
-        for (int i = 0; i < identifier.length(); i++) {
+    public static void unusedClean(String identifierU) {
+    // the capacity of a StringBuilder instance can be initialized to the value of a string it's passed.
+        StringBuilder stringBuilder = new StringBuilder( /* identifierU */ );
+
+        for (int i = 0; i < identifierU.length(); i++) {
 
             // -- Replace whitespace with underscores - DONE
             if (Character.isWhitespace(stringBuilder.charAt(i))) {
@@ -47,8 +51,6 @@ public class SqueakyClean {
         }
 
         System.out.println(stringBuilder);
-        return stringBuilder.toString();
-
     }
 
     public static void main(String[] args) {
