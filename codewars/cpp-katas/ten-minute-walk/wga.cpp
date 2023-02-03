@@ -16,6 +16,7 @@ bool isValidWalk(std::vector<char> walk) {
   pos.lat = 0;
 
   // check if walk will take exactly ten minutes before even evaluating directions 
+  // this is what caused the problem with the tests. I wasn't checking to make sure it would take exactly 10 minutes.
   if (walk.size() != 10) {
     return false;
   } else {
